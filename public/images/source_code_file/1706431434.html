@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Dashboard | Velonic - Bootstrap 5 Admin & Dashboard Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully responsive admin theme which can be used to build CRM, CMS,ERP etc." name="description" />
+        <meta content="SDMGA" name="author" />
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+		<!-- Select2 css -->
+		<link href="assets/vendor/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+		<!-- Datatables css -->
+		<link href="assets/vendor/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+		<link href="assets/vendor/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet"
+			type="text/css" />
+		<link href="assets/vendor/datatables.net-fixedcolumns-bs5/css/fixedColumns.bootstrap5.min.css" rel="stylesheet"
+			type="text/css" />
+		<link href="assets/vendor/datatables.net-fixedheader-bs5/css/fixedHeader.bootstrap5.min.css" rel="stylesheet"
+			type="text/css" />
+		<link href="assets/vendor/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet"
+			type="text/css" />
+		<link href="assets/vendor/datatables.net-select-bs5/css/select.bootstrap5.min.css" rel="stylesheet"
+			type="text/css" />
+		<!-- Quill css -->
+		<link href="assets/vendor/quill/quill.snow.css" rel="stylesheet" type="text/css" />
+        <!-- Daterangepicker css -->
+        <link rel="stylesheet" href="assets/vendor/daterangepicker/daterangepicker.css">
+        <!-- Vector Map css -->
+        <link rel="stylesheet" href="assets/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css">
+        <!-- Theme Config Js -->
+        <script src="assets/js/config.js"></script>
+        <!-- App css -->
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
+        <!-- Icons css -->
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+        <!-- Begin page -->
+        <div class="wrapper">
+            <!-- ========== Topbar Start ========== -->
+            <div class="navbar-custom">
+                <div class="topbar container-fluid">
+                    <div class="d-flex align-items-center gap-1">
+                        <!-- Topbar Brand Logo -->
+                        <div class="logo-topbar">
+                            <!-- Logo light -->
+                            <a href="index.html" class="logo-light">
+                                <span class="logo-lg">
+                                    <img src="assets/images/logo.png" alt="logo">
+                                </span>
+                                <span class="logo-sm">
+                                    <img src="assets/images/logo-sm.png" alt="small logo">
+                                </span>
+                            </a>
+
+                            <!-- Logo Dark -->
+                            <a href="index.html" class="logo-dark">
+                                <span class="logo-lg">
+                                    <img src="assets/images/logo-dark.png" alt="dark logo">
+                                </span>
+                                <span class="logo-sm">
+                                    <img src="assets/images/logo-sm.png" alt="small logo">
+                                </span>
+                            </a>
+                        </div>
+
+                        <!-- Sidebar Menu Toggle Button -->
+                        <button class="button-toggle-menu">
+                            <i class="ri-menu-line"></i>
+                        </button>
+
+                        <!-- Horizontal Menu Toggle Button -->
+                        <button class="navbar-toggle" data-bs-toggle="collapse" data-bs-target="#topnav-menu-content">
+                            <div class="lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </button>
+
+                        <!-- Topbar Search Form -->
+                        <div class="app-search d-none d-lg-block">
+                            <form>
+                                <div class="input-group">
+                                    <input type="search" class="form-control" placeholder="Search...">
+                                    <span class="ri-search-line search-icon text-muted"></span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <ul class="topbar-menu d-flex align-items-center gap-3">
+                        <li class="dropdown d-lg-none">
+                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="false" aria-expanded="false">
+                                <i class="ri-search-line fs-22"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
+                                <form class="p-3">
+                                    <input type="search" class="form-control" placeholder="Search ..."
+                                        aria-label="Recipient's username">
+                                </form>
+                            </div>
+                        </li>
+
+                        <li class="d-none d-sm-inline-block">
+                            <div class="nav-link" id="light-dark-mode">
+                                <i class="ri-moon-line fs-22"></i>
+                            </div>
+                        </li>
+
+                        <li class="dropdown">
+                            <a class="nav-link dropdown-toggle arrow-none nav-user" data-bs-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="false" aria-expanded="false">
+                                <span class="account-user-avatar">
+                                    <img src="assets/images/users/avatar-1.jpg" alt="user-image" width="32" class="rounded-circle">
+                                </span>
+                                <span class="d-lg-block d-none">
+                                    <h5 class="my-0 fw-normal">Naeem <i
+                                            class="ri-arrow-down-s-line d-none d-sm-inline-block align-middle"></i></h5>
+                                </span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated profile-dropdown">
+                                <!-- item-->
+                                <div class=" dropdown-header noti-title">
+                                    <h6 class="text-overflow m-0">Welcome !</h6>
+                                </div>
+                                <!-- item-->
+                                <a href="pages-profile.html" class="dropdown-item">
+                                    <i class="ri-account-circle-line fs-18 align-middle me-1"></i>
+                                    <span>My Account</span>
+                                </a>
+                                <!-- item-->
+                                <a href="pages-profile.html" class="dropdown-item">
+                                    <i class="ri-settings-4-line fs-18 align-middle me-1"></i>
+                                    <span>Settings</span>
+                                </a>
+                                <!-- item-->
+                                <a href="#" class="dropdown-item">
+                                    <i class="ri-logout-box-line fs-18 align-middle me-1"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- ========== Topbar End ========== -->
+            
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="leftside-menu">
+
+                <!-- Brand Logo Light -->
+                <a href="index.html" class="logo logo-light">
+                    <span class="logo-lg">
+                        <img src="assets/images/logo.png" alt="logo">
+                    </span>
+                    <span class="logo-sm">
+                        <img src="assets/images/logo-sm.png" alt="small logo">
+                    </span>
+                </a>
+
+                <!-- Brand Logo Dark -->
+                <a href="index.html" class="logo logo-dark">
+                    <span class="logo-lg">
+                        <img src="assets/images/logo-dark.png" alt="dark logo">
+                    </span>
+                    <span class="logo-sm">
+                        <img src="assets/images/logo-sm.png" alt="small logo">
+                    </span>
+                </a>
+
+                <!-- Sidebar -left -->
+                <div class="h-100" id="leftside-menu-container" data-simplebar>
+                    <!--- Sidemenu -->
+                    <ul class="side-nav">
+
+                        <li class="side-nav-title">Main</li>
+
+                        <li class="side-nav-item">
+                            <a href="index.html" class="side-nav-link">
+                                <i class="ri-dashboard-3-line"></i>
+                                <span class="badge bg-success float-end">9+</span>
+                                <span> Dashboard </span>
+                            </a>
+                        </li>
+
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#sidebarPages" aria-expanded="false" aria-controls="sidebarPages" class="side-nav-link">
+                                <i class="ri-pages-line"></i>
+                                <span> Pages </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="sidebarPages">
+                                <ul class="side-nav-second-level">
+                                    <li>
+                                        <a href="pages-starter.html">Starter Page</a>
+                                    </li>
+                                    <li>
+                                        <a href="pages-contact-list.html">Contact List</a>
+                                    </li>
+                                    <li>
+                                        <a href="pages-profile.html">Profile</a>
+                                    </li>
+                                    <li>
+                                        <a href="pages-timeline.html">Timeline</a>
+                                    </li>
+                                    <li>
+                                        <a href="pages-invoice.html">Invoice</a>
+                                    </li>
+                                    <li>
+                                        <a href="pages-faq.html">FAQ</a>
+                                    </li>
+                                    <li>
+                                        <a href="pages-pricing.html">Pricing</a>
+                                    </li>
+                                    <li>
+                                        <a href="pages-maintenance.html">Maintenance</a>
+                                    </li>
+                                    <li>
+                                        <a href="error-404.html">Error 404</a>
+                                    </li>
+                                    <li>
+                                        <a href="error-404-alt.html">Error 404-alt</a>
+                                    </li>
+                                    <li>
+                                        <a href="error-500.html">Error 500</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#sidebarPagesAuth" aria-expanded="false" aria-controls="sidebarPagesAuth" class="side-nav-link">
+                                <i class="ri-group-2-line"></i>
+                                <span> Authentication </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="sidebarPagesAuth">
+                                <ul class="side-nav-second-level">
+                                    <li>
+                                        <a href="auth-login.html">Login</a>
+                                    </li>
+                                    <li>
+                                        <a href="auth-register.html">Register</a>
+                                    </li>
+                                    <li>
+                                        <a href="auth-logout.html">Logout</a>
+                                    </li>
+                                    <li>
+                                        <a href="auth-forgotpw.html">Forgot Password</a>
+                                    </li>
+                                    <li>
+                                        <a href="auth-lock-screen.html">Lock Screen</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#sidebarLayouts" aria-expanded="false" aria-controls="sidebarLayouts" class="side-nav-link">
+                                <i class="ri-layout-line"></i>
+                                <span class="badge bg-warning float-end">New</span>
+                                <span> Layouts </span>
+                            </a>
+                            <div class="collapse" id="sidebarLayouts">
+                                <ul class="side-nav-second-level">
+                                    <li>
+                                        <a href="layouts-horizontal.html" target="_blank">Horizontal</a>
+                                    </li>
+                                    <li>
+                                        <a href="layouts-light-sidebar.html" target="_blank">Light Sidebar</a>
+                                    </li>
+                                    <li>
+                                        <a href="layouts-sm-sidebar.html" target="_blank">Small Sidebar</a>
+                                    </li>
+                                    <li>
+                                        <a href="layouts-collapsed-sidebar.html" target="_blank">Collapsed Sidebar</a>
+                                    </li>
+                                    <li>
+                                        <a href="layouts-unsticky-layout.html" target="_blank">Unsticky Layout</a>
+                                    </li>
+                                    <li>
+                                        <a href="layouts-boxed.html" target="_blank">Boxed Layout</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="side-nav-title">Components</li>
+
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#sidebarBaseUI" aria-expanded="false" aria-controls="sidebarBaseUI" class="side-nav-link">
+                                <i class="ri-briefcase-line"></i>
+                                <span> Base UI </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="sidebarBaseUI">
+                                <ul class="side-nav-second-level">
+                                    <li>
+                                        <a href="ui-accordions.html">Accordions</a>
+                                    </li>
+                                    <li>
+                                        <a href="ui-alerts.html">Alerts</a>
+                                    </li>
+                                    <li>
+                                        <a href="ui-avatars.html">Avatars</a>
+                                    </li>
+                                    <li>
+                                        <a href="ui-buttons.html">Buttons</a>
+                                    </li>
+                                    <li>
+                                        <a href="ui-badges.html">Badges</a>
+                                    </li>
+                                    <li>
+                                        <a href="ui-breadcrumb.html">Breadcrumb</a>
+                                    </li>
+                                    <li>
+                                        <a href="ui-cards.html">Cards</a>
+                                    </li>
+                                    <li>
+                                        <a href="ui-carousel.html">Carousel</a>
+                                    </li>
+                                    <li>
+                                        <a href="ui-collapse.html">Collapse</a>
+                                    </li>
+                                    <li>
+                                        <a href="ui-dropdowns.html">Dropdowns</a>
+                                    </li>
+                                    <li>
+                                        <a href="ui-embed-video.html">Embed Video</a>
+                                    </li>
+                                    <li>
+                                        <a href="ui-grid.html">Grid</a>
+                                    </li>
+                                    <li>
+                                        <a href="ui-links.html">Links</a>
+                                    </li>
+                                    <li>
+                                        <a href="ui-list-group.html">List Group</a>
+                                    </li>
+                                    <li>
+                                        <a href="ui-modals.html">Modals</a>
+                                    </li>
+                                    <li>
+                                        <a href="ui-notifications.html">Notifications</a>
+                                    </li>
+                                    <li>
+                                        <a href="ui-offcanvas.html">Offcanvas</a>
+                                    </li>
+                                    <li>
+                                        <a href="ui-placeholders.html">Placeholders</a>
+                                    </li>
+                                    <li>
+                                        <a href="ui-pagination.html">Pagination</a>
+                                    </li>
+                                    <li>
+                                        <a href="ui-popovers.html">Popovers</a>
+                                    </li>
+                                    <li>
+                                        <a href="ui-progress.html">Progress</a>
+                                    </li>
+                                    <li>
+                                        <a href="ui-spinners.html">Spinners</a>
+                                    </li>
+                                    <li>
+                                        <a href="ui-tabs.html">Tabs</a>
+                                    </li>
+                                    <li>
+                                        <a href="ui-tooltips.html">Tooltips</a>
+                                    </li>
+                                    <li>
+                                        <a href="ui-typography.html">Typography</a>
+                                    </li>
+                                    <li>
+                                        <a href="ui-utilities.html">Utilities</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#sidebarExtendedUI" aria-expanded="false" aria-controls="sidebarExtendedUI" class="side-nav-link">
+                                <i class="ri-compasses-2-line"></i>
+                                <span> Extended UI </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="sidebarExtendedUI">
+                                <ul class="side-nav-second-level">
+                                    <li>
+                                        <a href="extended-portlets.html">Portlets</a>
+                                    </li>
+                                    <li>
+                                        <a href="extended-scrollbar.html">Scrollbar</a>
+                                    </li>
+                                    <li>
+                                        <a href="extended-range-slider.html">Range Slider</a>
+                                    </li>
+                                    <li>
+                                        <a href="extended-scrollspy.html">Scrollspy</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#sidebarIcons" aria-expanded="false" aria-controls="sidebarIcons" class="side-nav-link">
+                                <i class="ri-pencil-ruler-2-line"></i>
+                                <span> Icons </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="sidebarIcons">
+                                <ul class="side-nav-second-level">
+                                    <li>
+                                        <a href="icons-remixicons.html">Remix Icons</a>
+                                    </li>
+                                    <li>
+                                        <a href="icons-bootstrap.html">Bootstrap Icons</a>
+                                    </li>
+                                    <li>
+                                        <a href="icons-mdi.html">Material Design Icons</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#sidebarCharts" aria-expanded="false" aria-controls="sidebarCharts" class="side-nav-link">
+                                <i class="ri-donut-chart-fill"></i>
+                                <span> Charts </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="sidebarCharts">
+                                <ul class="side-nav-second-level">
+                                    <li>
+                                        <a href="charts-apex.html">Apex Charts</a>
+                                    </li>
+                                    <li>
+                                        <a href="charts-chartjs.html">Chartjs</a>
+                                    </li>
+                                    <li>
+                                        <a href="charts-sparklines.html">Sparkline Charts</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#sidebarForms" aria-expanded="false" aria-controls="sidebarForms" class="side-nav-link">
+                                <i class="ri-survey-line"></i>
+                                <span> Forms </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="sidebarForms">
+                                <ul class="side-nav-second-level">
+                                    <li>
+                                        <a href="form-elements.html">Basic Elements</a>
+                                    </li>
+                                    <li>
+                                        <a href="form-advanced.html">Form Advanced</a>
+                                    </li>
+                                    <li>
+                                        <a href="form-validation.html">Form Validation</a>
+                                    </li>
+                                    <li>
+                                        <a href="form-wizard.html">Form Wizard</a>
+                                    </li>
+                                    <li>
+                                        <a href="form-fileuploads.html">File Uploads</a>
+                                    </li>
+                                    <li>
+                                        <a href="form-editors.html">Form Editors</a>
+                                    </li>
+                                    <li>
+                                        <a href="form-image-crop.html">Image Crop</a>
+                                    </li>
+                                    <li>
+                                        <a href="form-x-editable.html">X Editable</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#sidebarTables" aria-expanded="false" aria-controls="sidebarTables" class="side-nav-link">
+                                <i class="ri-table-line"></i>
+                                <span> Tables </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="sidebarTables">
+                                <ul class="side-nav-second-level">
+                                    <li>
+                                        <a href="tables-basic.html">Basic Tables</a>
+                                    </li>
+                                    <li>
+                                        <a href="tables-datatable.html">Data Tables</a>
+                                    </li>
+                                    <li>
+                                        <a href="tables-editable.html">Editable Tables</a>
+                                    </li>
+                                    <li>
+                                        <a href="tables-responsive.html">Responsive Table</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#sidebarMaps" aria-expanded="false" aria-controls="sidebarMaps" class="side-nav-link">
+                                <i class="ri-map-pin-line"></i>
+                                <span> Maps </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="sidebarMaps">
+                                <ul class="side-nav-second-level">
+                                    <li>
+                                        <a href="maps-google.html">Google Maps</a>
+                                    </li>
+                                    <li>
+                                        <a href="maps-vector.html">Vector Maps</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#sidebarMultiLevel" aria-expanded="false" aria-controls="sidebarMultiLevel" class="side-nav-link">
+                                <i class="ri-share-line"></i>
+                                <span> Multi Level </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="sidebarMultiLevel">
+                                <ul class="side-nav-second-level">
+                                    <li>
+                                        <a href="javascript: void(0);">Level 1.1</a>
+                                    </li>
+                                    <li class="side-nav-item">
+                                        <a data-bs-toggle="collapse" href="#sidebarSecondLevel" aria-expanded="false" aria-controls="sidebarSecondLevel">
+                                            <span> Level 1.2 </span>
+                                            <span class="menu-arrow"></span>
+                                        </a>
+                                        <div class="collapse" id="sidebarSecondLevel">
+                                            <ul class="side-nav-third-level">
+                                                <li>
+                                                    <a href="javascript: void(0);">Item 1</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript: void(0);">Item 2</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="side-nav-item">
+                                        <a data-bs-toggle="collapse" href="#sidebarThirdLevel" aria-expanded="false" aria-controls="sidebarThirdLevel">
+                                            <span> Level 1.3 </span>
+                                            <span class="menu-arrow"></span>
+                                        </a>
+                                        <div class="collapse" id="sidebarThirdLevel">
+                                            <ul class="side-nav-third-level">
+                                                <li>
+                                                    <a href="javascript: void(0);">Item 1</a>
+                                                </li>
+                                                <li class="side-nav-item">
+                                                    <a data-bs-toggle="collapse" href="#sidebarFourthLevel" aria-expanded="false" aria-controls="sidebarFourthLevel">
+                                                        <span> Item 2 </span>
+                                                        <span class="menu-arrow"></span>
+                                                    </a>
+                                                    <div class="collapse" id="sidebarFourthLevel">
+                                                        <ul class="side-nav-forth-level">
+                                                            <li>
+                                                                <a href="javascript: void(0);">Item 2.1</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="javascript: void(0);">Item 2.2</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+
+                    </ul>
+                    <!--- End Sidemenu -->
+
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <!-- ========== Left Sidebar End ========== -->
+
+            <div class="content-page">
+                <div class="content">
+
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <div class="page-title-right">
+                                        <ol class="breadcrumb m-0">
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">SDMGA</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboards</a></li>
+                                            <li class="breadcrumb-item active">Welcome!</li>
+                                        </ol>
+                                    </div>
+                                    <h4 class="page-title">Welcome!</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end page title -->
+
+                        <div class="row">
+                            <div class="col-xxl-3 col-sm-6">
+                                <div class="card widget-flat text-bg-pink">
+                                    <div class="card-body">
+                                        <div class="float-end">
+                                            <i class="ri-eye-line widget-icon"></i>
+                                        </div>
+                                        <h6 class="text-uppercase mt-0" title="Customers">Daily Visits</h6>
+                                        <h2 class="my-2">8,652</h2>
+                                        <p class="mb-0">
+                                            <span class="badge bg-white bg-opacity-10 me-1">2.97%</span>
+                                            <span class="text-nowrap">Since last month</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div> <!-- end col-->
+
+                            <div class="col-xxl-3 col-sm-6">
+                                <div class="card widget-flat text-bg-purple">
+                                    <div class="card-body">
+                                        <div class="float-end">
+                                            <i class="ri-wallet-2-line widget-icon"></i>
+                                        </div>
+                                        <h6 class="text-uppercase mt-0" title="Customers">Revenue</h6>
+                                        <h2 class="my-2">$9,254.62</h2>
+                                        <p class="mb-0">
+                                            <span class="badge bg-white bg-opacity-10 me-1">18.25%</span>
+                                            <span class="text-nowrap">Since last month</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div> <!-- end col-->
+
+                            <div class="col-xxl-3 col-sm-6">
+                                <div class="card widget-flat text-bg-info">
+                                    <div class="card-body">
+                                        <div class="float-end">
+                                            <i class="ri-shopping-basket-line widget-icon"></i>
+                                        </div>
+                                        <h6 class="text-uppercase mt-0" title="Customers">Orders</h6>
+                                        <h2 class="my-2">753</h2>
+                                        <p class="mb-0">
+                                            <span class="badge bg-white bg-opacity-25 me-1">-5.75%</span>
+                                            <span class="text-nowrap">Since last month</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div> <!-- end col-->
+
+                            <div class="col-xxl-3 col-sm-6">
+                                <div class="card widget-flat text-bg-primary">
+                                    <div class="card-body">
+                                        <div class="float-end">
+                                            <i class="ri-group-2-line widget-icon"></i>
+                                        </div>
+                                        <h6 class="text-uppercase mt-0" title="Customers">Users</h6>
+                                        <h2 class="my-2">63,154</h2>
+                                        <p class="mb-0">
+                                            <span class="badge bg-white bg-opacity-10 me-1">8.21%</span>
+                                            <span class="text-nowrap">Since last month</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div> <!-- end col-->
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="card-widgets">
+                                            <a href="javascript:;" data-bs-toggle="reload"><i class="ri-refresh-line"></i></a>
+                                            <a data-bs-toggle="collapse" href="#weeklysales-collapse" role="button" aria-expanded="false" aria-controls="weeklysales-collapse"><i class="ri-subtract-line"></i></a>
+                                            <a href="#" data-bs-toggle="remove"><i class="ri-close-line"></i></a>
+                                        </div>
+                                        <h5 class="header-title mb-0">Weekly Sales Report</h5>
+
+                                        <div id="weeklysales-collapse" class="collapse pt-3 show">
+                                            <div dir="ltr">
+                                                <div id="revenue-chart" class="apex-charts" data-colors="#3bc0c3,#1a2942,#d1d7d973"></div>
+                                            </div>
+    
+                                            <div class="row text-center">
+                                                <div class="col">
+                                                    <p class="text-muted mt-3">Current Week</p>
+                                                    <h3 class=" mb-0">
+                                                        <span>$506.54</span>
+                                                    </h3>
+                                                </div>
+                                                <div class="col">
+                                                    <p class="text-muted mt-3">Previous Week</p>
+                                                    <h3 class=" mb-0">
+                                                        <span>$305.25 </span>
+                                                    </h3>
+                                                </div>
+                                                <div class="col">
+                                                    <p class="text-muted mt-3">Conversation</p>
+                                                    <h3 class=" mb-0">
+                                                        <span>3.27%</span>
+                                                    </h3>
+                                                </div>
+                                                <div class="col">
+                                                    <p class="text-muted mt-3">Customers</p>
+                                                    <h3 class=" mb-0">
+                                                        <span>3k</span>
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div> 
+									<!-- end card-body-->
+                                </div> 
+								<!-- end card-->
+                            </div> 
+							<!-- end col-->
+                            <div class="col-lg-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="card-widgets">
+                                            <a href="javascript:;" data-bs-toggle="reload"><i class="ri-refresh-line"></i></a>
+                                            <a data-bs-toggle="collapse" href="#yearly-sales-collapse" role="button" aria-expanded="false" aria-controls="yearly-sales-collapse"><i class="ri-subtract-line"></i></a>
+                                            <a href="#" data-bs-toggle="remove"><i class="ri-close-line"></i></a>
+                                        </div>
+                                        <h5 class="header-title mb-0">Yearly Sales Report</h5>
+
+                                        <div id="yearly-sales-collapse" class="collapse pt-3 show">
+                                            <div dir="ltr">
+                                                <div id="yearly-sales-chart" class="apex-charts" data-colors="#3bc0c3,#1a2942,#d1d7d973"></div>
+                                            </div>
+                                            <div class="row text-center">
+                                                <div class="col">
+                                                    <p class="text-muted mt-3 mb-2">Quarter 1</p>
+                                                    <h4 class="mb-0">$56.2k</h4>
+                                                </div>
+                                                <div class="col">
+                                                    <p class="text-muted mt-3 mb-2">Quarter 2</p>
+                                                    <h4 class="mb-0">$42.5k</h4>
+                                                </div>
+                                                <div class="col">
+                                                    <p class="text-muted mt-3 mb-2">All Time</p>
+                                                    <h4 class="mb-0">$102.03k</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+									<!-- end card-body-->
+                                </div> 
+								<!-- end card-->
+                            </div> 
+							<!-- end col-->
+                        </div>
+                        <!-- end row -->
+						<div class="row">
+							<div class="col-12">
+								<div class="card">
+									<div class="card-header">
+										<div class="d-flex justify-content-end">
+                                            <!-- Large modal -->
+                                            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#addNewModalId">Add New</button>
+                                        </div>
+									</div>
+									<div class="card-body">
+										<table id="basic-datatable" class="table table-striped dt-responsive nowrap w-100">
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Position</th>
+													<th>Office</th>
+													<th>Age</th>
+													<th>Start date</th>
+													<th>Salary</th>
+													<th>Action</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Tiger Nixon</td>
+													<td>System Architect</td>
+													<td>Edinburgh</td>
+													<td>61</td>
+													<td>2011/04/25</td>
+													<td>$320,800</td>
+													<td style="width: 100px;">
+														<div class="d-flex justify-content-end gap-1">
+															<button type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#addNewModalId">Edit</button>
+															<button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#danger-header-modal">Delete</button>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<!-- end card body-->
+								</div> 
+								<!-- end card -->
+							</div>
+							<!-- end col-->
+						</div> 
+						<!-- end row-->
+                    </div>
+                    <!-- container -->
+                </div>
+                <!-- content -->
+
+                <!-- Footer Start -->
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <script>document.write(new Date().getFullYear())</script> © ICT Division</b>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- end Footer -->
+            </div>
+        </div>
+        <!-- END wrapper -->   
+
+
+		<!-- Modal -->
+		<div class="modal fade" id="addNewModalId" data-bs-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="addNewModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title" id="addNewModalLabel">Add New Modal</h4>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<form>
+							<div class="row">
+								<div class="col-6">
+									<div class="mb-3">
+										<label for="name" class="form-label">Name</label>
+										<input type="text" id="name" name="name"
+											class="form-control" placeholder="Enter Your Name">
+									</div>
+								</div>
+								<div class="col-6">
+									<div class="mb-3">
+										<label for="email" class="form-label">Email</label>
+										<input type="email" id="email" name="email"
+											class="form-control" placeholder="Email">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-6">
+									<div class="mb-3">
+										<label for="example-select" class="form-label">Status</label>
+										<select class="form-select" id="example-select">
+											<option>Active</option>
+											<option>Inactive</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-6">
+									<div class="mb-3">
+										<label for="example-fileinput" class="form-label">Image</label>
+										<input type="file" id="example-fileinput" class="form-control">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12">
+									<div class="mb-3">
+										<label for="example-textarea" class="form-label">Choose Multiple</label>
+										<select class="select2 form-control select2-multiple" data-toggle="select2"
+										multiple="multiple" data-placeholder="Choose ...">
+											<option value="1">Naeem</option>
+											<option value="2">Anik</option>
+											<option value="3">Zisan</option>
+											<option value="4">Sajib</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12">
+									<ul class="list-group list-group-flush">
+										<li class="list-group-item p-0">
+											<div class="mb-2">
+												<div id="snow-editor" style="height: 200px;"></div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="d-flex justify-content-end">
+								<button class="btn btn-primary" type="submit">Submit</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		<!-- /.modal -->
+		<!-- Danger Header Modal -->
+		<div id="danger-header-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="danger-header-modalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header modal-colored-header bg-danger">
+						<h4 class="modal-title" id="danger-header-modalLabel">Modal Heading</h4>
+						<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<h5 class="mt-0">Danger Background</h5>
+						<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-danger">Delete</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		<!-- /.modal -->
+
+        
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+		<!--  Select2 Plugin Js -->
+		<script src="assets/vendor/select2/js/select2.min.js"></script>
+        <!-- Daterangepicker js -->
+        <script src="assets/vendor/daterangepicker/moment.min.js"></script>
+        <script src="assets/vendor/daterangepicker/daterangepicker.js"></script>
+        <!-- Apex Charts js -->
+        <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+        <!-- Vector Map js -->
+        <script src="assets/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js"></script>
+        <script src="assets/vendor/admin-resources/jquery.vectormap/maps/jquery-jvectormap-world-mill-en.js"></script>
+		<!-- Quill Editor js -->
+		<script src="assets/vendor/quill/quill.min.js"></script>
+		<!-- Quill Demo js -->
+		<script src="assets/js/pages/quilljs.init.js"></script>
+		<!-- Datatables js -->
+		<script src="assets/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+		<script src="assets/vendor/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+		<script src="assets/vendor/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+		<script src="assets/vendor/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
+		<script src="assets/vendor/datatables.net-fixedcolumns-bs5/js/fixedColumns.bootstrap5.min.js"></script>
+		<script src="assets/vendor/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+		<script src="assets/vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+		<script src="assets/vendor/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
+		<script src="assets/vendor/datatables.net-buttons/js/buttons.html5.min.js"></script>
+		<script src="assets/vendor/datatables.net-buttons/js/buttons.flash.min.js"></script>
+		<script src="assets/vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
+		<script src="assets/vendor/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+		<script src="assets/vendor/datatables.net-select/js/dataTables.select.min.js"></script>
+	
+		<!-- Datatable Demo Aapp js -->
+		<script src="assets/js/pages/datatable.init.js"></script>
+        <!-- Dashboard App js -->
+        <script src="assets/js/pages/dashboard.js"></script>
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+    </body>
+</html> 

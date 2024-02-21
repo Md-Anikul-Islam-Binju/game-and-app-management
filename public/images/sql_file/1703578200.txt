@@ -1,0 +1,985 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Dec 26, 2023 at 07:39 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `sdmgd`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `abouts`
+--
+
+CREATE TABLE `abouts` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `details` text DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `abouts`
+--
+
+INSERT INTO `abouts` (`id`, `title`, `details`, `image`, `status`, `created_at`, `updated_at`) VALUES
+(2, 'Test', '<p>ok</p>', '1702984672.jpg', 1, '2023-12-19 05:17:52', '2023-12-19 05:17:52');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `counters`
+--
+
+CREATE TABLE `counters` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `counter_name` varchar(255) DEFAULT NULL,
+  `counter_no` varchar(191) DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `counters`
+--
+
+INSERT INTO `counters` (`id`, `counter_name`, `counter_no`, `status`, `created_at`, `updated_at`) VALUES
+(2, 'Total Happy Client', '598525', 1, '2023-12-19 23:11:23', '2023-12-21 04:40:55');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `failed_jobs`
+--
+
+CREATE TABLE `failed_jobs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `uuid` varchar(255) NOT NULL,
+  `connection` text NOT NULL,
+  `queue` text NOT NULL,
+  `payload` longtext NOT NULL,
+  `exception` longtext NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `migrations`
+--
+
+CREATE TABLE `migrations` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `migration` varchar(255) NOT NULL,
+  `batch` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `migrations`
+--
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(1, '2014_10_12_000000_create_users_table', 1),
+(2, '2014_10_12_100000_create_password_reset_tokens_table', 1),
+(3, '2019_08_19_000000_create_failed_jobs_table', 1),
+(4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(5, '2023_12_17_103706_create_news_table', 2),
+(6, '2023_12_17_103716_create_venues_table', 2),
+(7, '2023_12_17_103736_create_trainings_table', 2),
+(8, '2023_12_17_103749_create_notices_table', 2),
+(9, '2023_12_17_103801_create_counters_table', 2),
+(10, '2023_12_17_103830_create_project_category_sections_table', 2),
+(11, '2023_12_17_103840_create_projects_table', 2),
+(12, '2023_12_17_103851_create_sliders_table', 2),
+(13, '2023_12_17_103901_create_abouts_table', 2),
+(14, '2023_12_17_103914_create_showcases_table', 2),
+(15, '2023_12_17_103924_create_teams_table', 2),
+(16, '2023_12_19_043053_create_permission_tables', 3),
+(17, '2023_12_24_062021_create_project_file_categories_table', 4);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `model_has_permissions`
+--
+
+CREATE TABLE `model_has_permissions` (
+  `permission_id` bigint(20) UNSIGNED NOT NULL,
+  `model_type` varchar(255) NOT NULL,
+  `model_id` bigint(20) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `model_has_roles`
+--
+
+CREATE TABLE `model_has_roles` (
+  `role_id` bigint(20) UNSIGNED NOT NULL,
+  `model_type` varchar(255) NOT NULL,
+  `model_id` bigint(20) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `model_has_roles`
+--
+
+INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
+(6, 'App\\Models\\User', 7),
+(7, 'App\\Models\\User', 8),
+(8, 'App\\Models\\User', 9),
+(9, 'App\\Models\\User', 10);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `news`
+--
+
+CREATE TABLE `news` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `date` date DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `link` varchar(255) DEFAULT NULL,
+  `details` text DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `news`
+--
+
+INSERT INTO `news` (`id`, `title`, `date`, `image`, `link`, `details`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Test', '2023-12-21', '1703069322.jpg', 'http://127.0.0.1:8000', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 1, '2023-12-20 04:48:42', '2023-12-20 04:48:53');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notices`
+--
+
+CREATE TABLE `notices` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `file` varchar(255) DEFAULT NULL,
+  `details` text DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `password_reset_tokens`
+--
+
+CREATE TABLE `password_reset_tokens` (
+  `email` varchar(255) NOT NULL,
+  `token` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `permissions`
+--
+
+CREATE TABLE `permissions` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `guard_name` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `permissions`
+--
+
+INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
+(1, 'role-list', 'web', '2023-12-18 23:25:44', '2023-12-18 23:25:44'),
+(2, 'role-create', 'web', '2023-12-18 23:25:44', '2023-12-18 23:25:44'),
+(3, 'role-edit', 'web', '2023-12-18 23:25:44', '2023-12-18 23:25:44'),
+(4, 'role-delete', 'web', '2023-12-18 23:25:44', '2023-12-18 23:25:44'),
+(5, 'team-list', 'web', '2023-12-18 23:25:44', '2023-12-18 23:25:44'),
+(6, 'team-create', 'web', '2023-12-18 23:25:44', '2023-12-18 23:25:44'),
+(7, 'team-edit', 'web', '2023-12-18 23:25:44', '2023-12-18 23:25:44'),
+(8, 'team-delete', 'web', '2023-12-18 23:25:44', '2023-12-18 23:25:44'),
+(9, 'user-list', 'web', '2023-12-19 04:32:58', '2023-12-19 04:32:58'),
+(10, 'user-create', 'web', '2023-12-19 04:32:58', '2023-12-19 04:32:58'),
+(11, 'user-edit', 'web', '2023-12-19 04:32:58', '2023-12-19 04:32:58'),
+(12, 'user-delete', 'web', '2023-12-19 04:32:58', '2023-12-19 04:32:58'),
+(13, 'role-and-permission-list', 'web', '2023-12-19 05:00:59', '2023-12-19 05:00:59'),
+(14, 'showcase-list', 'web', '2023-12-19 05:11:12', '2023-12-19 05:11:12'),
+(15, 'showcase-create', 'web', '2023-12-19 05:11:12', '2023-12-19 05:11:12'),
+(16, 'showcase-edit', 'web', '2023-12-19 05:11:12', '2023-12-19 05:11:12'),
+(17, 'showcase-delete', 'web', '2023-12-19 05:11:12', '2023-12-19 05:11:12'),
+(18, 'about-list', 'web', '2023-12-19 05:11:12', '2023-12-19 05:11:12'),
+(19, 'about-create', 'web', '2023-12-19 05:11:12', '2023-12-19 05:11:12'),
+(20, 'about-edit', 'web', '2023-12-19 05:11:12', '2023-12-19 05:11:12'),
+(21, 'about-delete', 'web', '2023-12-19 05:11:12', '2023-12-19 05:11:12'),
+(22, 'slider-list', 'web', '2023-12-19 05:11:12', '2023-12-19 05:11:12'),
+(23, 'slider-create', 'web', '2023-12-19 05:11:12', '2023-12-19 05:11:12'),
+(24, 'slider-edit', 'web', '2023-12-19 05:11:12', '2023-12-19 05:11:12'),
+(25, 'slider-delete', 'web', '2023-12-19 05:11:12', '2023-12-19 05:11:12'),
+(26, 'counter-list', 'web', '2023-12-19 23:08:25', '2023-12-19 23:08:25'),
+(27, 'counter-create', 'web', '2023-12-19 23:08:25', '2023-12-19 23:08:25'),
+(28, 'counter-edit', 'web', '2023-12-19 23:08:25', '2023-12-19 23:08:25'),
+(29, 'counter-delete', 'web', '2023-12-19 23:08:25', '2023-12-19 23:08:25'),
+(30, 'project-category-list', 'web', '2023-12-19 23:08:25', '2023-12-19 23:08:25'),
+(31, 'project-category-create', 'web', '2023-12-19 23:08:25', '2023-12-19 23:08:25'),
+(32, 'project-category-edit', 'web', '2023-12-19 23:08:25', '2023-12-19 23:08:25'),
+(33, 'project-category-delete', 'web', '2023-12-19 23:08:25', '2023-12-19 23:08:25'),
+(34, 'project-list', 'web', '2023-12-19 23:08:25', '2023-12-19 23:08:25'),
+(35, 'project-create', 'web', '2023-12-19 23:08:25', '2023-12-19 23:08:25'),
+(36, 'project-edit', 'web', '2023-12-19 23:08:25', '2023-12-19 23:08:25'),
+(37, 'project-delete', 'web', '2023-12-19 23:08:25', '2023-12-19 23:08:25'),
+(38, 'notice-list', 'web', '2023-12-20 03:15:30', '2023-12-20 03:15:30'),
+(39, 'notice-create', 'web', '2023-12-20 03:15:30', '2023-12-20 03:15:30'),
+(40, 'notice-edit', 'web', '2023-12-20 03:15:30', '2023-12-20 03:15:30'),
+(41, 'notice-delete', 'web', '2023-12-20 03:15:30', '2023-12-20 03:15:30'),
+(42, 'venue-list', 'web', '2023-12-20 03:33:31', '2023-12-20 03:33:31'),
+(43, 'venue-create', 'web', '2023-12-20 03:33:31', '2023-12-20 03:33:31'),
+(44, 'venue-edit', 'web', '2023-12-20 03:33:31', '2023-12-20 03:33:31'),
+(45, 'venue-delete', 'web', '2023-12-20 03:33:31', '2023-12-20 03:33:31'),
+(46, 'training-list', 'web', '2023-12-20 03:33:31', '2023-12-20 03:33:31'),
+(47, 'training-create', 'web', '2023-12-20 03:33:31', '2023-12-20 03:33:31'),
+(48, 'training-edit', 'web', '2023-12-20 03:33:31', '2023-12-20 03:33:31'),
+(49, 'training-delete', 'web', '2023-12-20 03:33:31', '2023-12-20 03:33:31'),
+(50, 'news-list', 'web', '2023-12-20 04:34:53', '2023-12-20 04:34:53'),
+(51, 'news-create', 'web', '2023-12-20 04:34:53', '2023-12-20 04:34:53'),
+(52, 'news-edit', 'web', '2023-12-20 04:34:53', '2023-12-20 04:34:53'),
+(53, 'news-delete', 'web', '2023-12-20 04:34:53', '2023-12-20 04:34:53'),
+(54, 'resource-list', 'web', '2023-12-20 04:51:05', '2023-12-20 04:51:05'),
+(55, 'project-file-category-list', 'web', '2023-12-24 00:26:14', '2023-12-24 00:26:14'),
+(56, 'project-file-category-create', 'web', '2023-12-24 00:26:14', '2023-12-24 00:26:14'),
+(57, 'project-file-category-edit', 'web', '2023-12-24 00:26:14', '2023-12-24 00:26:14'),
+(58, 'project-file-category-delete', 'web', '2023-12-24 00:26:14', '2023-12-24 00:26:14'),
+(59, 'file-management-list', 'web', '2023-12-24 00:45:23', '2023-12-24 00:45:23');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `personal_access_tokens`
+--
+
+CREATE TABLE `personal_access_tokens` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `tokenable_type` varchar(255) NOT NULL,
+  `tokenable_id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `token` varchar(64) NOT NULL,
+  `abilities` text DEFAULT NULL,
+  `last_used_at` timestamp NULL DEFAULT NULL,
+  `expires_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `projects`
+--
+
+CREATE TABLE `projects` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `link` varchar(255) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `category_id` varchar(255) DEFAULT NULL,
+  `details` text DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `projects`
+--
+
+INSERT INTO `projects` (`id`, `title`, `link`, `image`, `category_id`, `details`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Test Project', 'http://127.0.0.1:8000/slider-section', '1703050768.jpg', '[\"1\",\"3\"]', 'Have you checked out Shotayu yet? It\'s the latest innovation from Medisquare, designed to transform your healthcare experience. Don\'t miss out on the', 1, '2023-12-19 23:39:28', '2023-12-20 01:58:01');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `project_category_sections`
+--
+
+CREATE TABLE `project_category_sections` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `project_category_sections`
+--
+
+INSERT INTO `project_category_sections` (`id`, `name`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'History', 1, '2023-12-18 05:01:06', '2023-12-19 23:20:10'),
+(3, 'Traning', 1, '2023-12-19 23:20:28', '2023-12-19 23:20:28');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `project_file_categories`
+--
+
+CREATE TABLE `project_file_categories` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `project_file_categories`
+--
+
+INSERT INTO `project_file_categories` (`id`, `name`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Mobile App', 1, '2023-12-24 00:29:42', '2023-12-24 00:29:42'),
+(2, 'Web Application', 1, '2023-12-24 00:29:53', '2023-12-24 01:05:24');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `roles`
+--
+
+CREATE TABLE `roles` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `guard_name` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `roles`
+--
+
+INSERT INTO `roles` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
+(6, 'Super Admin', 'web', '2023-12-19 04:29:00', '2023-12-19 04:29:00'),
+(7, 'Admin', 'web', '2023-12-19 04:39:27', '2023-12-19 04:39:27'),
+(8, 'AD', 'web', '2023-12-19 04:47:38', '2023-12-19 04:47:38'),
+(9, 'Trainer', 'web', '2023-12-20 06:23:31', '2023-12-20 06:23:31');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `role_has_permissions`
+--
+
+CREATE TABLE `role_has_permissions` (
+  `permission_id` bigint(20) UNSIGNED NOT NULL,
+  `role_id` bigint(20) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `role_has_permissions`
+--
+
+INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
+(1, 6),
+(2, 6),
+(3, 6),
+(4, 6),
+(5, 6),
+(5, 7),
+(6, 6),
+(6, 7),
+(7, 6),
+(7, 7),
+(8, 6),
+(8, 7),
+(9, 6),
+(10, 6),
+(11, 6),
+(12, 6),
+(13, 6),
+(14, 6),
+(14, 7),
+(14, 8),
+(15, 6),
+(15, 7),
+(16, 6),
+(16, 7),
+(16, 8),
+(17, 6),
+(17, 7),
+(18, 6),
+(18, 7),
+(18, 8),
+(19, 6),
+(19, 7),
+(20, 6),
+(20, 7),
+(20, 8),
+(21, 6),
+(21, 7),
+(22, 6),
+(22, 7),
+(22, 8),
+(23, 6),
+(23, 7),
+(24, 6),
+(24, 7),
+(24, 8),
+(25, 6),
+(25, 7),
+(26, 6),
+(26, 7),
+(27, 6),
+(27, 7),
+(28, 6),
+(28, 7),
+(29, 6),
+(29, 7),
+(30, 6),
+(30, 7),
+(31, 6),
+(31, 7),
+(32, 6),
+(32, 7),
+(33, 6),
+(33, 7),
+(34, 6),
+(34, 7),
+(35, 6),
+(35, 7),
+(36, 6),
+(36, 7),
+(37, 6),
+(37, 7),
+(38, 6),
+(38, 7),
+(39, 6),
+(39, 7),
+(40, 6),
+(40, 7),
+(41, 6),
+(41, 7),
+(42, 6),
+(42, 7),
+(42, 8),
+(42, 9),
+(43, 6),
+(43, 7),
+(43, 9),
+(44, 6),
+(44, 7),
+(44, 8),
+(44, 9),
+(45, 6),
+(45, 7),
+(45, 9),
+(46, 6),
+(46, 7),
+(46, 8),
+(46, 9),
+(47, 6),
+(47, 7),
+(48, 6),
+(48, 7),
+(48, 8),
+(48, 9),
+(49, 6),
+(49, 7),
+(50, 6),
+(50, 7),
+(50, 8),
+(51, 6),
+(51, 7),
+(52, 6),
+(52, 7),
+(52, 8),
+(53, 6),
+(53, 7),
+(54, 6),
+(54, 7),
+(54, 8),
+(54, 9),
+(55, 6),
+(57, 6),
+(59, 6);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `showcases`
+--
+
+CREATE TABLE `showcases` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `background_image` varchar(255) DEFAULT NULL,
+  `play_store_link` varchar(255) DEFAULT NULL,
+  `app_store_link` varchar(255) DEFAULT NULL,
+  `background_color` varchar(255) DEFAULT NULL,
+  `details` text DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `showcases`
+--
+
+INSERT INTO `showcases` (`id`, `title`, `name`, `image`, `background_image`, `play_store_link`, `app_store_link`, `background_color`, `details`, `status`, `created_at`, `updated_at`) VALUES
+(4, 'Test', 'Unfinished Memory', '1702890703.png', '1702890703.jpg', 'http://127.0.0.1:8000/', NULL, '#86f570', 'Looking for DocTime Coupons, Discount Code, Promo Offers, Voucher Deals . Get Doctime Promo Code and Enjoy 200 taka bonus.', 1, '2023-12-18 03:11:43', '2023-12-19 22:56:21');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sliders`
+--
+
+CREATE TABLE `sliders` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `type` varchar(255) DEFAULT NULL,
+  `file` varchar(255) DEFAULT NULL,
+  `link` varchar(255) DEFAULT NULL,
+  `details` text DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sliders`
+--
+
+INSERT INTO `sliders` (`id`, `title`, `type`, `file`, `link`, `details`, `status`, `created_at`, `updated_at`) VALUES
+(2, 'Wow', 'image', '1702984467.jpg', 'http://127.0.0.1:8000/slider-section', 'This article will provide some of the most important examples of Laravel 10 roles and permissions tutorial. You will learn about Laravel 10 Spatie user roles and permissions tutorial. I will explain simply about Laravel 10 Spatie/Laravel-Permission. This post will give you a simple example of Laravel 10 ACL tutorial. Alright, let us dive into the details.', 0, '2023-12-19 05:14:27', '2023-12-19 05:14:33');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `teams`
+--
+
+CREATE TABLE `teams` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  `designation` varchar(255) DEFAULT NULL,
+  `linkedin_link` varchar(255) DEFAULT NULL,
+  `fb_link` varchar(255) DEFAULT NULL,
+  `order_no` int(11) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `details` text DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `teams`
+--
+
+INSERT INTO `teams` (`id`, `name`, `email`, `phone`, `designation`, `linkedin_link`, `fb_link`, `order_no`, `image`, `details`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Md Anikul Islam', 'anik@gmail.com', '01905256528', 'Web Developer', 'http://127.0.0.1:8000/', 'http://127.0.0.1:8000/', 1, '1702875474.jpg', 'What is web development? A web developer\'s job is to create websites. While their primary role is to ensure the website is visually appealing and easy to navigate, many web developers are also responsible for the website\'s performance and capacity.', 1, '2023-12-17 22:57:54', '2023-12-19 00:41:35'),
+(7, 'Zisan', 'zisan@gmail.com', '01403525652', 'Web Developer', 'https://www.doctime.com.bd/', 'http://127.0.0.1:8000/', 2, '1703153159.jpg', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum congue lacus ac mattis. Nullam facilisis, odio in placerat pellentesque, erat erat varius metus, sed hendrerit massa mauris sed urna. Donec pretium orci ac sagittis vestibulum. Curabitur id gravida ipsum. Cras sit amet sem in felis vestibulum finibus sed at massa. Maecenas a feugiat metus. Vivamus efficitur nisi nec porta elementum. Cras vulputate ac mauris vitae malesuada. Nunc elementum erat ex, pellentesque suscipit augue rutrum eget.</p>', 1, '2023-12-21 04:05:59', '2023-12-21 04:05:59');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `trainings`
+--
+
+CREATE TABLE `trainings` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `start_date` date DEFAULT NULL,
+  `end_date` date DEFAULT NULL,
+  `duration` varchar(255) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `total_student` int(11) DEFAULT NULL,
+  `total_venue` int(11) DEFAULT NULL,
+  `venue_id` varchar(255) DEFAULT NULL,
+  `details` text DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `trainings`
+--
+
+INSERT INTO `trainings` (`id`, `name`, `start_date`, `end_date`, `duration`, `image`, `total_student`, `total_venue`, `venue_id`, `details`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Unfinished Memory', '2023-12-21', '2023-12-25', '5', '1703067674.jpg', 100, 2, '[\"2\",\"4\"]', 'ok', 1, '2023-12-20 04:21:14', '2023-12-20 04:22:34');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  `remember_token` varchar(100) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(7, 'SDMGD Super Admin', 'sdmgd@admin.com', NULL, '$2y$12$O6Mh8G0rdLiCZ2O6pFlJxe6Wc.iD55/aaXDj5NLtAHQn81IEm37jq', NULL, '2023-12-19 04:29:00', '2023-12-19 04:29:00'),
+(8, 'Md Anik(Admin)', 'anik@gmail.com', NULL, '$2y$12$oGclVOi6Du61px8Cu7.IPuwZKmK7lEVRAYWcK0pA2K4nF8bbSL3xK', NULL, '2023-12-19 04:40:20', '2023-12-19 04:40:20'),
+(9, 'AD Sajib Mridha', 'ad@gmail.com', NULL, '$2y$12$BKLTGmG6QcpdzuckxNBSfOabAAo3d6KROIL0X2Q6FrqsuUSu2X11K', NULL, '2023-12-19 04:49:37', '2023-12-19 04:49:37'),
+(10, 'Ab Naiem', 'ab@gmail.com', NULL, '$2y$12$rL6AwRvgrtI30hPUotRAzOqHvw0uZUSGPa8fgYGxrmgoD3XEYFEaC', NULL, '2023-12-20 06:24:07', '2023-12-20 06:24:07');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `venues`
+--
+
+CREATE TABLE `venues` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `venues`
+--
+
+INSERT INTO `venues` (`id`, `name`, `address`, `status`, `created_at`, `updated_at`) VALUES
+(2, 'Dhaka  Bank', 'Dhaka 1216', 1, '2023-12-20 03:35:14', '2023-12-20 03:35:14'),
+(3, 'City Bank', 'Dhaka 1414', 1, '2023-12-20 03:35:19', '2023-12-20 03:35:19'),
+(4, 'ICT', 'Dhaka 1444', 1, '2023-12-20 03:35:46', '2023-12-20 03:35:46'),
+(5, 'Unfinished Memory', 'Dhaka 1414', 1, '2023-12-21 04:38:06', '2023-12-21 04:38:06');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `abouts`
+--
+ALTER TABLE `abouts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `counters`
+--
+ALTER TABLE `counters`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indexes for table `migrations`
+--
+ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `model_has_permissions`
+--
+ALTER TABLE `model_has_permissions`
+  ADD PRIMARY KEY (`permission_id`,`model_id`,`model_type`),
+  ADD KEY `model_has_permissions_model_id_model_type_index` (`model_id`,`model_type`);
+
+--
+-- Indexes for table `model_has_roles`
+--
+ALTER TABLE `model_has_roles`
+  ADD PRIMARY KEY (`role_id`,`model_id`,`model_type`),
+  ADD KEY `model_has_roles_model_id_model_type_index` (`model_id`,`model_type`);
+
+--
+-- Indexes for table `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `notices`
+--
+ALTER TABLE `notices`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `password_reset_tokens`
+--
+ALTER TABLE `password_reset_tokens`
+  ADD PRIMARY KEY (`email`);
+
+--
+-- Indexes for table `permissions`
+--
+ALTER TABLE `permissions`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `permissions_name_guard_name_unique` (`name`,`guard_name`);
+
+--
+-- Indexes for table `personal_access_tokens`
+--
+ALTER TABLE `personal_access_tokens`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
+  ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
+
+--
+-- Indexes for table `projects`
+--
+ALTER TABLE `projects`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `project_category_sections`
+--
+ALTER TABLE `project_category_sections`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `project_file_categories`
+--
+ALTER TABLE `project_file_categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `roles`
+--
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `roles_name_guard_name_unique` (`name`,`guard_name`);
+
+--
+-- Indexes for table `role_has_permissions`
+--
+ALTER TABLE `role_has_permissions`
+  ADD PRIMARY KEY (`permission_id`,`role_id`),
+  ADD KEY `role_has_permissions_role_id_foreign` (`role_id`);
+
+--
+-- Indexes for table `showcases`
+--
+ALTER TABLE `showcases`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `sliders`
+--
+ALTER TABLE `sliders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `teams`
+--
+ALTER TABLE `teams`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `trainings`
+--
+ALTER TABLE `trainings`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_email_unique` (`email`);
+
+--
+-- Indexes for table `venues`
+--
+ALTER TABLE `venues`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `abouts`
+--
+ALTER TABLE `abouts`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `counters`
+--
+ALTER TABLE `counters`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `news`
+--
+ALTER TABLE `news`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `notices`
+--
+ALTER TABLE `notices`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `permissions`
+--
+ALTER TABLE `permissions`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+
+--
+-- AUTO_INCREMENT for table `personal_access_tokens`
+--
+ALTER TABLE `personal_access_tokens`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `projects`
+--
+ALTER TABLE `projects`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `project_category_sections`
+--
+ALTER TABLE `project_category_sections`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `project_file_categories`
+--
+ALTER TABLE `project_file_categories`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `showcases`
+--
+ALTER TABLE `showcases`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `sliders`
+--
+ALTER TABLE `sliders`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `teams`
+--
+ALTER TABLE `teams`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `trainings`
+--
+ALTER TABLE `trainings`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `venues`
+--
+ALTER TABLE `venues`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `model_has_permissions`
+--
+ALTER TABLE `model_has_permissions`
+  ADD CONSTRAINT `model_has_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `model_has_roles`
+--
+ALTER TABLE `model_has_roles`
+  ADD CONSTRAINT `model_has_roles_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `role_has_permissions`
+--
+ALTER TABLE `role_has_permissions`
+  ADD CONSTRAINT `role_has_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `role_has_permissions_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

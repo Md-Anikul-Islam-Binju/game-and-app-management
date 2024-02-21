@@ -1,0 +1,119 @@
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.right_caption {
+		right: -25px;
+	}
+	.slider-area .hero-caption h1 {
+        font-size:60px
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.slider-area .hero-caption h1 {
+        font-size:50px
+    }
+	.showcase_caption h2 {
+		font-size: 40px;
+		line-height: 50px;
+	}
+}
+@media only screen and (max-width: 991px) {
+	.teacher {
+		margin-bottom: 80px;
+	}
+	.right_caption {
+		right: 0px;
+		margin-bottom: 40px;
+		padding-top: 50px;
+	}
+	.news_entry {
+		margin-bottom: 30px;
+	}
+	.news_text h3 a {
+		font-size: 20px;
+	}
+	
+	.slider-area .hero-caption p {
+        margin-bottom: 43px;
+        font-size: 21px
+    }
+	.showcase_slide {
+		padding: 100px 0px;
+	}
+	.showcase_caption {
+		padding-left: 0;
+	}
+	.showcase_image img {
+		width: 70%;
+	}
+	.sdmga-counter-bar-content {
+		justify-content: center;
+		gap: 20px;
+	}
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+	.traning {
+		margin-top: 0;
+		height: 250px;
+	}
+	.right_caption h2 {
+	  	font-size: 31px;
+	}
+	.slider-area .hero-caption h1 {
+        font-size:35px
+    }
+	.slider-area .hero-caption p br {
+        display:none
+    }
+	.showcase_caption h2 {
+		font-size: 30px;
+		line-height: 40px;
+	}
+	.apps, .animation {
+		margin-bottom: 0px;
+	}
+}
+  
+@media (max-width: 575px) {
+	.traning {
+		margin-top: 0;
+		height: 250px;
+	}
+	.apps, .animation {
+		margin-bottom: 0px;
+	}
+	.right_caption h2 {
+	  	font-size: 31px;
+	}
+	.teacher {
+		border-bottom-right-radius: 250px;
+		margin: 0 35px 80px;
+	}
+	.slider-area .hero-caption h1 {
+        font-size:35px
+    }
+	.slider-area .hero-caption p br {
+        display:none
+    }
+	.showcase_caption h2 {
+		font-size: 30px;
+		line-height: 40px;
+	}
+	.animation_movie_stack_wrap {
+		height: 400px;
+	}
+	.animation_movie_stack_wrap .content_stack {
+		padding: 30px 30px 20px;
+	}
+	.hero-caption h2 {
+		font-size: 30px;
+		line-height: 40px;
+	}
+	.contact-form {
+		margin-top: 50px;
+		padding: 30px;
+	}
+	.contact-form textarea {
+		height: 150px;
+	}
+}
+
